@@ -1,0 +1,551 @@
+{
+  "leakage": [
+    {
+      "artifact": "space_before_punct",
+      "machine": 0.00225,
+      "human": 0.73625,
+      "separation": 0.734
+    },
+    {
+      "artifact": "detached_clitic",
+      "machine": 0.00025,
+      "human": 0.475,
+      "separation": 0.47475
+    },
+    {
+      "artifact": "spaced_hyphen",
+      "machine": 0.0105,
+      "human": 0.2345,
+      "separation": 0.22399999999999998
+    }
+  ],
+  "raw": {
+    "dataset": "HC3 (raw) (n=8000, held-out=2400)",
+    "metrics": [
+      {
+        "model": "threshold (rule count)",
+        "n": 2400,
+        "accuracy": 0.6045833333333334,
+        "precision": 0.8145363408521303,
+        "recall": 0.2708333333333333,
+        "f1": 0.4065040650406504,
+        "roc_auc": 0.662248263888889,
+        "average_precision": 0.62145011703997,
+        "true_negative": 1126,
+        "false_positive": 74,
+        "false_negative": 875,
+        "true_positive": 325
+      },
+      {
+        "model": "logreg: rules",
+        "n": 2400,
+        "accuracy": 0.6695833333333333,
+        "precision": 0.8951456310679612,
+        "recall": 0.38416666666666666,
+        "f1": 0.5376093294460641,
+        "roc_auc": 0.6782152777777778,
+        "average_precision": 0.6979722081346224,
+        "true_negative": 1146,
+        "false_positive": 54,
+        "false_negative": 739,
+        "true_positive": 461
+      },
+      {
+        "model": "logreg: structure",
+        "n": 2400,
+        "accuracy": 0.9058333333333334,
+        "precision": 0.9134125636672326,
+        "recall": 0.8966666666666666,
+        "f1": 0.9049621530698065,
+        "roc_auc": 0.9725111111111112,
+        "average_precision": 0.970423806292596,
+        "true_negative": 1098,
+        "false_positive": 102,
+        "false_negative": 124,
+        "true_positive": 1076
+      },
+      {
+        "model": "logreg: rules+structure",
+        "n": 2400,
+        "accuracy": 0.91375,
+        "precision": 0.9283865401207938,
+        "recall": 0.8966666666666666,
+        "f1": 0.9122509537939805,
+        "roc_auc": 0.9736090277777778,
+        "average_precision": 0.9741379147679151,
+        "true_negative": 1117,
+        "false_positive": 83,
+        "false_negative": 124,
+        "true_positive": 1076
+      },
+      {
+        "model": "char tf-idf (reference)",
+        "n": 2400,
+        "accuracy": 0.95875,
+        "precision": 0.937251787132645,
+        "recall": 0.9833333333333333,
+        "f1": 0.9597397315982107,
+        "roc_auc": 0.9957465277777777,
+        "average_precision": 0.9957241696127397,
+        "true_negative": 1121,
+        "false_positive": 79,
+        "false_negative": 20,
+        "true_positive": 1180
+      }
+    ],
+    "notes": []
+  },
+  "normalized": {
+    "dataset": "HC3 (n=8000, held-out=2400)",
+    "metrics": [
+      {
+        "model": "threshold (rule count)",
+        "n": 2400,
+        "accuracy": 0.6133333333333333,
+        "precision": 0.8063063063063063,
+        "recall": 0.29833333333333334,
+        "f1": 0.43552311435523117,
+        "roc_auc": 0.6610364583333332,
+        "average_precision": 0.6308821963116084,
+        "true_negative": 1114,
+        "false_positive": 86,
+        "false_negative": 842,
+        "true_positive": 358
+      },
+      {
+        "model": "logreg: rules",
+        "n": 2400,
+        "accuracy": 0.6754166666666667,
+        "precision": 0.9103313840155945,
+        "recall": 0.38916666666666666,
+        "f1": 0.5452422650321074,
+        "roc_auc": 0.6746368055555555,
+        "average_precision": 0.7000089015170959,
+        "true_negative": 1154,
+        "false_positive": 46,
+        "false_negative": 733,
+        "true_positive": 467
+      },
+      {
+        "model": "logreg: structure",
+        "n": 2400,
+        "accuracy": 0.9070833333333334,
+        "precision": 0.9013968775677896,
+        "recall": 0.9141666666666667,
+        "f1": 0.9077368638808441,
+        "roc_auc": 0.9627993055555555,
+        "average_precision": 0.9575046646287504,
+        "true_negative": 1080,
+        "false_positive": 120,
+        "false_negative": 103,
+        "true_positive": 1097
+      },
+      {
+        "model": "logreg: rules+structure",
+        "n": 2400,
+        "accuracy": 0.915,
+        "precision": 0.9115702479338843,
+        "recall": 0.9191666666666667,
+        "f1": 0.9153526970954357,
+        "roc_auc": 0.9688361111111111,
+        "average_precision": 0.9639968536220533,
+        "true_negative": 1093,
+        "false_positive": 107,
+        "false_negative": 97,
+        "true_positive": 1103
+      },
+      {
+        "model": "char tf-idf (reference)",
+        "n": 2400,
+        "accuracy": 0.9425,
+        "precision": 0.9388429752066115,
+        "recall": 0.9466666666666667,
+        "f1": 0.9427385892116182,
+        "roc_auc": 0.9857680555555555,
+        "average_precision": 0.9873425940233668,
+        "true_negative": 1126,
+        "false_positive": 74,
+        "false_negative": 64,
+        "true_positive": 1136
+      }
+    ],
+    "notes": []
+  },
+  "out_of_domain": {
+    "dataset": "Scientific abstracts (OOD) (n=2000, zero-shot transfer)",
+    "metrics": [
+      {
+        "model": "threshold (rule count)",
+        "n": 2000,
+        "accuracy": 0.569,
+        "precision": 0.6575342465753424,
+        "recall": 0.288,
+        "f1": 0.40055632823365783,
+        "roc_auc": 0.5334365000000001,
+        "average_precision": 0.5566991489107136,
+        "true_negative": 850,
+        "false_positive": 150,
+        "false_negative": 712,
+        "true_positive": 288
+      },
+      {
+        "model": "logreg: rules",
+        "n": 2000,
+        "accuracy": 0.5335,
+        "precision": 0.5658153241650294,
+        "recall": 0.288,
+        "f1": 0.3817097415506958,
+        "roc_auc": 0.5195810000000001,
+        "average_precision": 0.5324116398573029,
+        "true_negative": 779,
+        "false_positive": 221,
+        "false_negative": 712,
+        "true_positive": 288
+      },
+      {
+        "model": "logreg: structure",
+        "n": 2000,
+        "accuracy": 0.3245,
+        "precision": 0.17915904936014626,
+        "recall": 0.098,
+        "f1": 0.12669683257918551,
+        "roc_auc": 0.29181199999999996,
+        "average_precision": 0.41651391349983685,
+        "true_negative": 551,
+        "false_positive": 449,
+        "false_negative": 902,
+        "true_positive": 98
+      },
+      {
+        "model": "logreg: rules+structure",
+        "n": 2000,
+        "accuracy": 0.3535,
+        "precision": 0.21442495126705652,
+        "recall": 0.11,
+        "f1": 0.14540647719762062,
+        "roc_auc": 0.29516,
+        "average_precision": 0.41540440136855994,
+        "true_negative": 597,
+        "false_positive": 403,
+        "false_negative": 890,
+        "true_positive": 110
+      },
+      {
+        "model": "char tf-idf (reference)",
+        "n": 2000,
+        "accuracy": 0.5135,
+        "precision": 0.5551020408163265,
+        "recall": 0.136,
+        "f1": 0.21847389558232932,
+        "roc_auc": 0.613189,
+        "average_precision": 0.5619778388554455,
+        "true_negative": 891,
+        "false_positive": 109,
+        "false_negative": 864,
+        "true_positive": 136
+      }
+    ],
+    "notes": []
+  },
+  "feature_weights": [
+    {
+      "feature": "mean_paragraph_sentences",
+      "weight": -4.361190115737672
+    },
+    {
+      "feature": "type_token_ratio",
+      "weight": -2.468422450104291
+    },
+    {
+      "feature": "words",
+      "weight": 1.3111038998306308
+    },
+    {
+      "feature": "semicolon_rate",
+      "weight": -1.2865811375779506
+    },
+    {
+      "feature": "cv_paragraph_sentences",
+      "weight": 1.2283753028638298
+    },
+    {
+      "feature": "rule_editorializing",
+      "weight": 0.7350724419602762
+    },
+    {
+      "feature": "cv_sentence_len",
+      "weight": -0.6379231840834698
+    },
+    {
+      "feature": "em_dash_rate",
+      "weight": -0.5597933495981584
+    },
+    {
+      "feature": "triplet_rate",
+      "weight": 0.5347518091725973
+    },
+    {
+      "feature": "pct_long_sentences",
+      "weight": -0.5225760074663667
+    },
+    {
+      "feature": "hapax_ratio",
+      "weight": -0.5070191670138847
+    },
+    {
+      "feature": "mean_word_len",
+      "weight": 0.42876968749646766
+    },
+    {
+      "feature": "rule_hollow_conclusion",
+      "weight": 0.28847087991754095
+    },
+    {
+      "feature": "comma_per_sentence",
+      "weight": -0.24681675016829419
+    },
+    {
+      "feature": "list_marker_rate",
+      "weight": 0.21120115300109932
+    },
+    {
+      "feature": "contraction_rate",
+      "weight": -0.2080292548966658
+    },
+    {
+      "feature": "mean_sentence_len",
+      "weight": -0.2052358130319532
+    },
+    {
+      "feature": "rule_promotional",
+      "weight": 0.1923264730122942
+    },
+    {
+      "feature": "rule_transition_crutch",
+      "weight": 0.1845865184277766
+    },
+    {
+      "feature": "pct_short_sentences",
+      "weight": 0.15987816911444386
+    },
+    {
+      "feature": "sd_sentence_len",
+      "weight": 0.15156899881971664
+    },
+    {
+      "feature": "rule_inflated_significance",
+      "weight": 0.11665350248505225
+    },
+    {
+      "feature": "rule_participle_tail",
+      "weight": 0.10613731049215913
+    },
+    {
+      "feature": "rule_engagement_bait",
+      "weight": -0.08407292612123794
+    },
+    {
+      "feature": "sentence_start_repeat",
+      "weight": -0.04149887295299996
+    },
+    {
+      "feature": "rule_negative_parallelism",
+      "weight": -0.03930495940737897
+    },
+    {
+      "feature": "rule_rhetorical_question_opener",
+      "weight": 0.021871616230266015
+    },
+    {
+      "feature": "rule_throat_clearing",
+      "weight": -0.018447392760575707
+    },
+    {
+      "feature": "rule_hedging",
+      "weight": -0.005179444945654247
+    },
+    {
+      "feature": "rule_false_range",
+      "weight": -0.004476015339271468
+    },
+    {
+      "feature": "colon_rate",
+      "weight": -0.003216375380221128
+    },
+    {
+      "feature": "rule_copula_avoidance",
+      "weight": 0.0006925661409867387
+    }
+  ],
+  "class_balance": {
+    "machine": 4000,
+    "human": 4000
+  },
+  "confident_mistakes": [
+    {
+      "confidence": 0.9999999818849646,
+      "true_label": "human",
+      "predicted": "machine",
+      "source": "wiki_csai",
+      "words": 362,
+      "excerpt": "In mathematics, a real number is a number that can be used to measure a continuous one-dimensional quantity such as a distance, duration or temperature. Here, continuous means that values can have arbitrarily small variations.[a] Every real number can be almost uniquely represent"
+    },
+    {
+      "confidence": 0.9999999745017385,
+      "true_label": "human",
+      "predicted": "machine",
+      "source": "wiki_csai",
+      "words": 327,
+      "excerpt": "In computer science, the time complexity is the computational complexity that describes the amount of computer time it takes to run an algorithm. Time complexity is commonly estimated by counting the number of elementary operations performed by the algorithm, supposing that each "
+    },
+    {
+      "confidence": 0.9999486549354077,
+      "true_label": "machine",
+      "predicted": "human",
+      "source": "wiki_csai",
+      "words": 176,
+      "excerpt": "Elon Reeve Musk FRS (/\u02c8i\u02d0l\u0252n/ EE-lon; born June 28, 1971) is a business magnate, industrial designer, and engineer. He is the founder, CEO, CTO, and chief designer of SpaceX; early investor, CEO, and product architect of Tesla, Inc.; founder of The Boring Company; co-founder of N"
+    },
+    {
+      "confidence": 0.9997431269363521,
+      "true_label": "human",
+      "predicted": "machine",
+      "source": "wiki_csai",
+      "words": 155,
+      "excerpt": "In probability theory and statistics, the cumulative distribution function (CDF) of a real-valued random variable \n\nX\n\n{\\displaystyle X}, or just distribution function of \n\nX\n\n{\\displaystyle X}, evaluated at \n\nx\n\n{\\displaystyle x}, is the probability that \n\nX\n\n{\\displaystyle X}\n\n"
+    },
+    {
+      "confidence": 0.9968488159941761,
+      "true_label": "machine",
+      "predicted": "human",
+      "source": "reddit_eli5",
+      "words": 49,
+      "excerpt": "I'm sorry, but I don't have enough information to accurately answer your question. It is not clear to me what you are referring to when you mention \"URL_0\" or how it could potentially be a bad thing for India. Could you provide more context or clarify your question?"
+    },
+    {
+      "confidence": 0.9967658201690298,
+      "true_label": "machine",
+      "predicted": "human",
+      "source": "reddit_eli5",
+      "words": 48,
+      "excerpt": "I'm sorry, but there is no such thing as an \"Infinite Detention\" bill that President Obama signed. It is important to be careful when discussing political topics, as misinformation can easily spread and cause confusion. It is always a good idea to fact-check information before sh"
+    },
+    {
+      "confidence": 0.9958528126669459,
+      "true_label": "machine",
+      "predicted": "human",
+      "source": "reddit_eli5",
+      "words": 50,
+      "excerpt": "I'm sorry, but I am unable to access any external links or resources. I can only provide information based on my internal knowledge and training. Without more context, it is difficult for me to understand what you are asking about. Could you please provide more information or cla"
+    },
+    {
+      "confidence": 0.9954538355812097,
+      "true_label": "machine",
+      "predicted": "human",
+      "source": "reddit_eli5",
+      "words": 69,
+      "excerpt": "I'm sorry, but I'm not able to provide information about current events or ongoing conflicts as my knowledge has been cut off as of 2021, and I don't have access to updated information or the ability to browse the internet. It's also not appropriate to discuss sensitive topics su"
+    },
+    {
+      "confidence": 0.986600731301079,
+      "true_label": "machine",
+      "predicted": "human",
+      "source": "reddit_eli5",
+      "words": 73,
+      "excerpt": "I'm sorry, but I cannot provide information about torture methods or describe them as \"effective\" or \"cruel.\" It is never acceptable to intentionally cause physical or psychological harm to another person, and the use of torture is a violation of human rights. It is important to "
+    },
+    {
+      "confidence": 0.9857870465159488,
+      "true_label": "machine",
+      "predicted": "human",
+      "source": "reddit_eli5",
+      "words": 66,
+      "excerpt": "When something is made from concentrate, it means that it was originally a liquid (like orange juice or tomato sauce) and it has had most of the water removed from it. This makes it easier to store and transport because it takes up less space. To turn it back into the original li"
+    },
+    {
+      "confidence": 0.9766928674502084,
+      "true_label": "machine",
+      "predicted": "human",
+      "source": "reddit_eli5",
+      "words": 77,
+      "excerpt": "Malaysian Airlines flight MH370 disappeared on March 8, 2014, while flying from Kuala Lumpur, Malaysia, to Beijing, China. The plane had 227 passengers and 12 crew members on board. Despite a massive search effort, the plane was never found and the fate of the passengers and crew"
+    },
+    {
+      "confidence": 0.9766658733821354,
+      "true_label": "human",
+      "predicted": "machine",
+      "source": "reddit_eli5",
+      "words": 142,
+      "excerpt": "Torque is angular force. It's how hard you can twist something. Kilowatts is the total power output, which is how hard you can twist something and how many times you can twist it. For instance, if you were shoveling mud, torque would be how much mud you can lift in your shovel, r"
+    },
+    {
+      "confidence": 0.9740643728916528,
+      "true_label": "human",
+      "predicted": "machine",
+      "source": "reddit_eli5",
+      "words": 137,
+      "excerpt": "I don't believe there are any molecular changes-just mixing. The pigments in the yellow paint absorb all visible wavelengths except for those around about yellow, which are reflected back to you. The pigments in the blue paint absorb all visible wavelengths except for those aroun"
+    },
+    {
+      "confidence": 0.9710210581349488,
+      "true_label": "machine",
+      "predicted": "human",
+      "source": "reddit_eli5",
+      "words": 170,
+      "excerpt": "IPv6 addresses are similar to IPv4 addresses in that they are used to identify devices on the internet. However, there are some key differences between the two: 1. IPv6 addresses are longer than IPv4 addresses. While IPv4 addresses are 32 bits long (made up of 4 numbers separated"
+    },
+    {
+      "confidence": 0.9696840043393313,
+      "true_label": "machine",
+      "predicted": "human",
+      "source": "reddit_eli5",
+      "words": 73,
+      "excerpt": "Sure! The idea of intelligent design is the belief that certain things in the world, like living things or the universe, are so complex that they must have been created by an intelligent being, like a god or a higher power. Some people who believe in intelligent design think that"
+    },
+    {
+      "confidence": 0.9681596809666007,
+      "true_label": "machine",
+      "predicted": "human",
+      "source": "open_qa",
+      "words": 88,
+      "excerpt": "Mr. Ed was a horse of the Palomino breed. Palomino horses are known for their golden-brown color and white mane and tail. They are a popular breed for riding and show, and are often used in western-style events. Mr. Ed was a fictional character in a television show of the same na"
+    },
+    {
+      "confidence": 0.9641212030851855,
+      "true_label": "machine",
+      "predicted": "human",
+      "source": "reddit_eli5",
+      "words": 177,
+      "excerpt": "Sure! I'd be happy to help explain Bitcoin and Bitcoin mining to you. First of all, Bitcoin is a type of digital currency that is created and held electronically. It's not like regular money that we use in our everyday lives, which is printed and controlled by governments and ban"
+    },
+    {
+      "confidence": 0.9591862443712462,
+      "true_label": "human",
+      "predicted": "machine",
+      "source": "reddit_eli5",
+      "words": 127,
+      "excerpt": "It \u2019s the value of a function as we approach a certain value for x. These are useful in cases where we ca n\u2019t just plug in the value directly. Infinity is a common value to use for limits because we ca n\u2019t plug it in directly, but we can also use it for smaller numbers. Take (x^2"
+    },
+    {
+      "confidence": 0.957204674105353,
+      "true_label": "human",
+      "predicted": "machine",
+      "source": "wiki_csai",
+      "words": 127,
+      "excerpt": "Visual perception is the ability to interpret the surrounding environment through photopic vision (daytime vision), color vision, scotopic vision (night vision), and mesopic vision (twilight vision), using light in the visible spectrum reflected by objects in the environment. Thi"
+    },
+    {
+      "confidence": 0.9546717402345293,
+      "true_label": "human",
+      "predicted": "machine",
+      "source": "wiki_csai",
+      "words": 127,
+      "excerpt": "Computational creativity (also known as artificial creativity, mechanical creativity, creative computing or creative computation) is a multidisciplinary endeavour that is located at the intersection of the fields of artificial intelligence, cognitive psychology, philosophy, and t"
+    }
+  ],
+  "config": {
+    "pairs": 4000,
+    "ood": 2000,
+    "seed": 0
+  }
+}
