@@ -2,7 +2,7 @@
 
 An evaluation harness for a hand-written editorial rubric that flags machine-sounding prose.
 
-The interesting question here is not "can you detect AI text." Plenty of tools claim that. The question is whether a rubric written by an editor carries real signal, how much of that signal survives a change of subject matter, and how much of any reported score is an artifact of the corpus rather than a property of the writing.
+The interesting question here is not "can you detect AI text." Plenty of tools claim that. The question is whether a rubric written by an editor carries real signal, how much of that signal survives a change of subject matter, and how much of any reported score is an artifact of the corpus instead of a property of the writing.
 
 The short answer: the rubric works in-domain, cadence matters far more than word choice, and the whole thing falls apart out-of-domain in a way that is worth understanding.
 
@@ -12,7 +12,7 @@ Scores a document on 32 features in two families.
 
 Thirteen **rule features** come from a published editorial standard: inflated significance ("stands as a testament to"), promotional register, editorializing, transition crutches, hollow conclusions, negative parallelism ("not just X, it's Y"), participle tails that fake analysis, and so on. Counted per 100 words.
 
-Nineteen **structural features** describe cadence rather than vocabulary: sentence-length variance, paragraph uniformity, type-token ratio, comma density, triplet rate, how often consecutive sentences open with the same word. The editorial standard claims structure is the stronger tell, since a writer can swap out every flagged word and still produce text whose rhythm is flat. This harness exists partly to test that claim.
+Nineteen **structural features** describe cadence instead of vocabulary: sentence-length variance, paragraph uniformity, type-token ratio, comma density, triplet rate, how often consecutive sentences open with the same word. The editorial standard claims structure is the stronger tell, since a writer can swap out every flagged word and still produce text whose rhythm is flat. This harness exists partly to test that claim.
 
 Four scorers are compared on identical splits, plus a character TF-IDF model as a reference point.
 
@@ -34,7 +34,7 @@ The naive version of the rubric, which is what a regex linter actually does, is 
 
 Structure beats vocabulary by a wide margin, 0.907 against 0.675. The editorial standard's claim holds. Adding the rule features to the structural ones buys only another 0.008 accuracy, so nearly all the usable signal is in cadence.
 
-A dumb character TF-IDF beats the whole hand-built thing. That is worth stating plainly rather than hiding: 32 interpretable features get you to 0.915 and 50,000 opaque character n-grams get you to 0.943. The rubric's argument is interpretability and the fact that each feature maps to an editing instruction, not raw score.
+A dumb character TF-IDF beats the whole hand-built thing. That's worth noticing: 32 interpretable features get you to 0.915 and 50,000 opaque character n-grams get you to 0.943. The rubric's argument is interpretability and the fact that each feature maps to an editing instruction, not raw score.
 
 ## The corpus is leaking, and here is by how much
 
@@ -55,7 +55,7 @@ A single regex for space-before-punctuation separates the classes on 73% of docu
 | logreg: rules + structure | 0.974 | 0.969 | −0.005 |
 | char TF-IDF | 0.996 | 0.986 | −0.010 |
 
-Smaller than expected, and the reason is instructive. The feature-based models never looked at punctuation spacing, so they had little to lose. TF-IDF did lose more, which is the point: the artifact-hungry model is the one that pays. A 0.010 drop also means my three regexes did not remove all of it, and character n-grams are still finding residual traces. The honest reading is that the normalizer reduces the leak rather than eliminating it, and that any absolute number from this corpus should be treated as an upper bound.
+Smaller than expected, and the reason is instructive. The feature-based models never looked at punctuation spacing, so they had little to lose. TF-IDF did lose more, which is the point: the artifact-hungry model is the one that pays. A 0.010 drop also means my three regexes did not remove all of it, and character n-grams are still finding residual traces. The honest reading is that the normalizer reduces the leak instead of eliminating it, and that any absolute number from this corpus should be treated as an upper bound.
 
 ## Out-of-domain, it collapses
 
@@ -83,7 +83,7 @@ Human encyclopedic prose gets called machine. Four of the five most confident er
 
 Short machine refusals get called human. The clearest example is a 49-word "I'm sorry, but I don't have enough information to accurately answer your question," which is unmistakably machine output to any reader and scores as human because it is short and structurally irregular. Length carries a positive weight of +1.311, so brevity alone pulls toward the human class.
 
-Both failures share a cause. The model learned a proxy, "long and uniform," rather than the target property, and the proxy comes apart at the edges of the length distribution and outside the training domain.
+Both failures share a cause. The model learned a proxy, "long and uniform," instead of the target property, and the proxy comes apart at the edges of the length distribution and outside the training domain.
 
 ## Running it
 
@@ -111,7 +111,7 @@ python -m pytest tests/ -q     # 30 tests
 
 ## What I would do next
 
-Fit on a mixture of domains rather than one, since the OOD collapse is a single-domain artifact. Replace raw length with a length-invariant formulation, which should fix the short-refusal failure. Test against 2026-era model output; HC3 was collected in 2022, so everything here demonstrates detection of three-year-old model prose, and current models write with far more cadence variation. Add a calibration curve, because for an editing tool the useful output is a calibrated probability rather than a label.
+Fit on a mixture of domains instead of one, since the OOD collapse is a single-domain artifact. Replace raw length with a length-invariant formulation, which should fix the short-refusal failure. Test against 2026-era model output; HC3 was collected in 2022, so everything here demonstrates detection of three-year-old model prose, and current models write with far more cadence variation. Add a calibration curve, because for an editing tool the useful output is a calibrated probability instead of a label.
 
 ## Layout
 
